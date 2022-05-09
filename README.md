@@ -1,5 +1,3 @@
-# easyvpn
-java vpn server and android client
 
 # 如何配置服务器（Ubuntu）
 
