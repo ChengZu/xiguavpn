@@ -13,7 +13,6 @@ import com.easyvpn.main.Packet.IP4Header;
 
 public class UdpServer implements Runnable {
 	private DatagramSocket datagramSocket;
-	private ArrayList<TcpProxy2> tcpProxys = new ArrayList<>();
 	private ArrayList<UdpProxy> udpProxys = new ArrayList<>();
 
 	private boolean isClose = false;
@@ -54,58 +53,8 @@ public class UdpServer implements Runnable {
 		byteBuffer.limit(recePacket.getLength());
 		Packet packet = new Packet(byteBuffer);
 
-		if (packet.isTCP()) {
-			processTcpPacket(recePacket, packet); //处理udp发过来的tcp包
-		} else if (packet.isUDP()) {
-			processUdpPacket(recePacket, packet);
-		}
+		processUdpPacket(recePacket, packet);
 
-	}
-
-	public void processTcpPacket(DatagramPacket recePacket, Packet packet) {
-		if (tcpProxys.size() > Config.MAX_CONNECT) {
-			System.out.println("TcpProxy connect max");
-			return;
-		}
-		IP4Header Ip4Header = packet.getIp4Header();
-		com.easyvpn.main.Packet.TCPHeader TCPHeader = packet.getTcpHeader();
-		if (Ip4Header == null || TCPHeader == null) {
-			System.out.println("process packet error: bad packet");
-			return;
-		}
-		InetAddress destIp = Ip4Header.destinationAddress;
-		int destPort = TCPHeader.destinationPort;
-		InetAddress srcIp = Ip4Header.sourceAddress;
-		int srcPort = TCPHeader.sourcePort;
-
-		// byte[] data = new byte[packet.getPlayLoadSize()];
-		// System.arraycopy(packet.backingBuffer.array(), offset, data, 0, dataSize);
-
-		int index = -1;
-		for (int i = 0; i < tcpProxys.size(); i++) {
-			TcpProxy2 proxy = tcpProxys.get(i);
-			if (proxy.ip.equals(recePacket.getAddress()) && proxy.port == recePacket.getPort()
-					&& proxy.srcIp.equals(srcIp) && proxy.srcPort == srcPort && proxy.destIp.equals(destIp)
-					&& proxy.destPort == destPort) {
-				if (index == 0)
-					System.out.println("TcpProxy exist");
-				proxy.write(packet);
-
-				index = i;
-				break;
-			}
-		}
-
-		if (index == -1) {
-			TcpProxy2 proxy = new TcpProxy2(this, packet, recePacket.getAddress(), recePacket.getPort(), srcIp, srcPort,
-					destIp, destPort);
-			tcpProxys.add(proxy);
-			proxy.write(packet);
-
-			// System.out.println("accept, total udp socket: " + udpProxys.size());
-		} else {
-			
-		}
 	}
 
 	public void processUdpPacket(DatagramPacket recePacket, Packet packet) {
