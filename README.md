@@ -3,26 +3,26 @@
 
 1.安装jdk
 
-apt-get install openjdk-8-jdk
+ apt-get install openjdk-8-jdk
 
 2.运行程序
 
-java -jar EasyVpn.jar
+ java -jar EasyVpn.jar
 
 
 在screen运行
 
  安装screen
  
- apt-get install screen
+  apt-get install screen
  
  启动srceen
  
- screen -S vpn
+  screen -S vpn
  
  运行vpn
  
- java -jar EasyVpn.jar
+  java -jar EasyVpn.jar
  
 
 #screen -r vpn
