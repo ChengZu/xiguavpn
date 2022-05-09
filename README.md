@@ -10,7 +10,7 @@
  java -jar EasyVpn.jar
 
 
-在screen运行
+断开ssh后仍运行，可使用screen
 
  安装screen
  
