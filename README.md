@@ -6,6 +6,8 @@
  apt-get install openjdk-8-jdk
 
 2.运行程序
+ 
+ 将build/EasyVpn.jar 拷贝到服务器,执行下面命令运行
 
  java -jar EasyVpn.jar
 
