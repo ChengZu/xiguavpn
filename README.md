@@ -12,7 +12,7 @@
  java -jar EasyVpn.jar
 ```  
 
-断开ssh后仍运行，可使用screen
+## 断开ssh后仍运行，可使用screen
 
  安装screen
  ```  
