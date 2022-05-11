@@ -53,4 +53,7 @@
 ```
 apt install openjdk-11-jdk-headless
 ```
-
+运行程序，用22端口
+```
+ java -jar EasyVpn.jar 22
+```
