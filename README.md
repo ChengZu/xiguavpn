@@ -18,7 +18,7 @@
  ```  
   apt-get install screen
  ```  
- 启动srceen
+ 创建新会话
  ```  
   screen -S vpn
  ```  
@@ -26,11 +26,11 @@
  ```  
   java -jar EasyVpn.jar
 
-#screen -r vpn
+#screen -r vpn //恢复会话
 
-#screen -X -S vpn quit
+#screen -X -S vpn quit //完全删除会话
 
-#这样退出的话，以后还可以通过screen -r （name）再次进入，快捷键命令：先同时按Ctrl+A+D键
+#快捷键命令：先同时按Ctrl+A+D键，这样退出的话，以后还可以通过screen -r （name）再次进入
 ```  
 
 
@@ -51,6 +51,6 @@
 ```  
 不要安装jdk1.8，运行报错，安装jdk11
 ```
-apt install openjdk-11-jre-headless
+apt install openjdk-11-jdk-headless
 ```
 
