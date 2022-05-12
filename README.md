@@ -42,7 +42,7 @@
 
 3.点击启动
 
-# 可以翻墙的vps服务商 [vultr](https://www.vultr.com/?ref=9126507-8H),主要是按时计费，$0.009/小时
+# 可以翻墙的vps服务商 [vultr](https://www.vultr.com/?ref=9126507-8H)，主要是按时计费，$0.009/小时
 
 2022.5月 ssh的22端口还可以用，那么就关闭ssh开vpn，没有ssh用控制面板网页版的vnc
 ```
