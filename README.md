@@ -44,7 +44,7 @@
 
 # 可以翻墙的vps服务商 [vultr](https://www.vultr.com/?ref=9126507-8H)
 
-2022.5 ssh的22端口还可以用，那么就关闭ssh开vpn，没有ssh用控制面板网页版的vnc
+2022.5月 ssh的22端口还可以用，那么就关闭ssh开vpn，没有ssh用控制面板网页版的vnc
 ```
 //关闭ssh命令
 /etc/init.d/ssh stop
