@@ -1,13 +1,12 @@
-别的vpn不会用，自己写了一个，傻瓜都会用
 # 如何配置服务器（Ubuntu）
 
 1.安装jdk
 ```  
- apt-get install openjdk-8-jdk
+apt install openjdk-11-jdk-headless
 ```  
 2.运行程序
  
- 将build/EasyVpn.jar 拷贝到服务器,执行下面命令运行
+ 将build/EasyVpn.jar 拷贝到服务器(用WinSCP), 执行下面命令运行
 ```  
  java -jar EasyVpn.jar
 ```  
@@ -41,19 +40,3 @@
 2.ip选项填服务器IP地址,其他选项默认即可
 
 3.点击启动
-
-# 可以翻墙的vps服务商 [vultr](https://www.vultr.com/?ref=9126507-8H)，主要是按时计费，$0.009/小时
-
-2022.5月 ssh的22端口还可以用，那么就关闭ssh开vpn，没有ssh用控制面板网页版的vnc
-```
-//关闭ssh命令
-/etc/init.d/ssh stop
-```  
-不要安装jdk1.8，运行报错，安装jdk11
-```
-apt install openjdk-11-jdk-headless
-```
-运行程序，用22端口
-```
- java -jar EasyVpn.jar 22
-```
