@@ -11,28 +11,6 @@ apt install openjdk-11-jdk-headless
  java -jar EasyVpn.jar
 ```  
 
-## 断开ssh后仍运行，可使用screen
-
- 安装screen
- ```  
-  apt-get install screen
- ```  
- 创建新会话
- ```  
-  screen -S vpn
- ```  
- 运行vpn
- ```  
-  java -jar EasyVpn.jar
-
-#screen -r vpn //恢复会话
-
-#screen -X -S vpn quit //完全删除会话
-
-#快捷键命令：先同时按Ctrl+A+D键，这样退出的话，以后还可以通过screen -r （name）再次进入
-```  
-
-
 # 如何安装客户端
 
 1.将build/app-release.apk 拷贝到android手机上安装
