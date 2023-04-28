@@ -17,6 +17,7 @@ public class UdpServer implements Runnable {
 
 	private boolean isClose = false;
 
+	
 	public UdpServer() {
 		try {
 			datagramSocket = new DatagramSocket(Config.PORT);
@@ -48,9 +49,7 @@ public class UdpServer implements Runnable {
 	}
 
 	public void processPacket(DatagramPacket recePacket) throws UnknownHostException {
-
 		ByteBuffer byteBuffer = ByteBuffer.wrap(recePacket.getData(), 0, recePacket.getLength());
-		byteBuffer.limit(recePacket.getLength());
 		Packet packet = new Packet(byteBuffer);
 
 		processUdpPacket(recePacket, packet);
@@ -79,7 +78,9 @@ public class UdpServer implements Runnable {
 		byte[] data = new byte[packet.getPlayLoadSize()];
 		System.arraycopy(packet.backingBuffer.array(), offset, data, 0, dataSize);
 		DatagramPacket sendPacket = new DatagramPacket(data, dataSize, destIp, destPort);
-		// System.out.println(packet);
+		
+		
+		//System.out.println(packet);
 
 		int index = -1;
 		for (int i = 0; i < udpProxys.size(); i++) {
@@ -133,8 +134,8 @@ public class UdpServer implements Runnable {
 			DatagramPacket recePacket = new DatagramPacket(receBuf, receBuf.length);
 			try {
 				datagramSocket.receive(recePacket);
+				//System.out.println(recePacket.getAddress()+": "+recePacket.getPort());
 				processPacket(recePacket);
-				// System.out.println(recePacket.getAddress()+""+recePacket.getPort());
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
