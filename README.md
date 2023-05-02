@@ -1,3 +1,5 @@
+# 如果vps封udp, 用这个版本[[文本](https://github.com/ChengZu/easyvpn-tcp)]([地址](https://github.com/ChengZu/easyvpn-tcp))
+
 # 如何配置服务器（Ubuntu）
 
 1.安装jdk
