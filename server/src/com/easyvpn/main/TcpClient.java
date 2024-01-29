@@ -20,10 +20,10 @@ public class TcpClient implements Runnable {
 		try {
 			is = socket.getInputStream();
 			os = socket.getOutputStream();
-
+			isClose = false;
 			thread = new Thread(this);
 			thread.start();
-			isClose = false;
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
