@@ -1,4 +1,4 @@
-# 我的另一个版本[https://github.com/ChengZu/easyvpn-tcp](https://github.com/ChengZu/toevpn)
+# 我的另一个版本[https://github.com/ChengZu/toevpn](https://github.com/ChengZu/toevpn)
 
 # 如何配置服务器（Ubuntu）
 
