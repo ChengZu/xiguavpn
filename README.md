@@ -1,5 +1,5 @@
 # 2024.01更新，修复connect close bug
-# 另外一个版本[https://github.com/ChengZu/toevpn](https://github.com/ChengZu/toevpn)
+# bug太多，建议用另一个Vpn[https://github.com/ChengZu/toevpn](https://github.com/ChengZu/xiguavpn)
 
 # 如何配置服务器（Ubuntu）
 
